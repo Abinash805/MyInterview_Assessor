@@ -1,0 +1,19 @@
+[ARCHITECTURE & INTEGRATION ROADMAP]
+
+This directory currently serves as a structural placeholder for the Phase 1 presentation. The V2 prototype demonstrates the business logic, state management, and user journey. 
+
+For the final December release, this directory will house the compiled machine learning model weights, cascades, and tokenizers. The transition pipeline includes:
+
+1. COMPUTER VISION (CV) MODULE:
+   - Integration of MediaPipe Face Mesh.
+   - Weights for posture alignment cascades (detecting shoulder drop / slouching).
+   - Micro-expression detection algorithms to flag nervous tropes (e.g., face touching, gaze deviation).
+
+2. NATURAL LANGUAGE PROCESSING (NLP) MODULE:
+   - Fine-tuned transformer checkpoints (e.g., DistilBERT/RoBERTa).
+   - The NLP engine will replace the hardcoded MOCK_TRANSCRIPT dictionary to dynamically transcribe live audio via Whisper API and grade the text against the STAR method (Situation, Task, Action, Result).
+
+3. AUDIO PROCESSING MODULE:
+   - Pitch and tone variance extraction weights to measure vocal confidence and pace (WPM) in real-time.
+
+By December, app.py will dynamically route live webcam and microphone byte-streams directly through these stored models rather than utilizing simulated arrays.
